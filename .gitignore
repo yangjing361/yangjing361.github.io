@@ -1,0 +1,16 @@
+# APK signing keys must never be published.
+*.jks
+*.keystore
+*.p12
+
+# Android and Bubblewrap build output.
+android-build/
+.bubblewrap/
+node_modules/
+*.apk
+*.aab
+
+# Local editor and operating system files.
+.DS_Store
+Thumbs.db
+.vscode/
