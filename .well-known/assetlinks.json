@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.ajing.imageplan",
+      "sha256_cert_fingerprints": [
+        "3E:59:F5:FE:E9:CE:35:8E:1B:95:41:11:F3:B6:E9:40:ED:66:2B:E2:D4:EC:D3:95:F2:17:8D:51:1C:6D:98:D2"
+      ]
+    }
+  }
+]
