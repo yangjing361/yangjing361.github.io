@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe7">
+  <meta name="description" content="阿靖的面部、穿搭与体态改善记录工具">
+  <title>阿靖形象计划</title>
+  <link rel="manifest" href="manifest.webmanifest?v=8">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=8">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">JING · PRIVATE</p>
+        <h1>形象计划</h1>
+      </div>
+      <button class="icon-button" id="open-add" aria-label="新增本周记录">＋</button>
+    </header>
+
+    <main>
+      <section class="page active" id="page-home" aria-labelledby="nav-home">
+        <div class="status-line">
+          <span>当前策略</span>
+          <strong>不减脸 · 修框架 · 降低拍摄失真</strong>
+        </div>
+
+        <section class="daily-focus">
+          <div class="focus-index">
+            <span>DAY</span>
+            <strong id="plan-day">01</strong>
+            <small>/ 30</small>
+          </div>
+          <div class="focus-copy">
+            <p class="eyebrow">TODAY'S ONE THING</p>
+            <h2 id="today-title">拍一张无畸变基准照</h2>
+            <p id="today-detail">后置 2×，距离 1.5–2 米，镜头与眼睛同高。</p>
+            <button class="text-action" id="complete-today" type="button">标记完成 <span>→</span></button>
+          </div>
+        </section>
+
+        <section class="phase-block">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">30-DAY PLAN</p>
+              <h2 id="phase-title">第 1 周 · 去掉假问题</h2>
+            </div>
+            <span id="phase-progress">0 / 3</span>
+          </div>
+          <p class="section-intro" id="phase-intro">先统一拍摄条件。不要把广角畸变误判成脸大，也不要因为一张丑照继续减脂。</p>
+          <div id="phase-tasks" class="task-list"></div>
+        </section>
+
+        <section class="reality-check">
+          <p class="eyebrow">CURRENT READ</p>
+          <p class="reality-quote">“你的问题不是五官需要重做，而是脸与身体、镜头与发型没有被放在同一套系统里。”</p>
+          <dl>
+            <div><dt>180 cm</dt><dd>身高</dd></div>
+            <div><dt id="home-weight">62.5 kg</dt><dd>当前体重</dd></div>
+            <div><dt id="home-bmi">19.3</dt><dd>BMI</dd></div>
+          </dl>
+        </section>
+      </section>
+
+      <section class="page" id="page-face" aria-labelledby="nav-face">
+        <div class="page-title">
+          <p class="eyebrow">FACE SYSTEM</p>
+          <h2>耐看靠秩序，<br>不是继续减脂。</h2>
+        </div>
+
+        <section class="diagnosis">
+          <div class="diagnosis-lead">
+            <span>判断</span>
+            <p>照片里没有证据说明你需要减脂瘦脸。你已经偏瘦，继续掉体重更可能让身体更薄、头身比更吃亏。</p>
+          </div>
+          <ol class="priority-list">
+            <li>
+              <span>01</span>
+              <div><b>镜头距离</b><p>自拍离脸太近，鼻部和中庭被放大，脸边缘被拉开。它不是别人正常社交距离看到的样子。</p></div>
+            </li>
+            <li>
+              <span>02</span>
+              <div><b>发型体积</b><p>顶部堆得高、两侧没有稳定收束，会让头部视觉面积继续增加。目标是降低顶部高度、保留侧分纹理。</p></div>
+            </li>
+            <li>
+              <span>03</span>
+              <div><b>镜框与精神度</b><p>当前镜框面积偏抢眼，镜片反光又遮眼。下一副优先试稍窄、镜片高度略低、鼻托稳定的深灰或枪色框。</p></div>
+            </li>
+            <li>
+              <span>04</span>
+              <div><b>身体框架</b><p>上衣过松和肩背偏薄会放大头部。肩、上背、上胸增加体积，比脸再瘦两斤更有效。</p></div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="protocol">
+          <div class="section-heading">
+            <div><p class="eyebrow">CAMERA PROTOCOL</p><h2>企业 IP 固定机位</h2></div>
+          </div>
+          <div class="protocol-visual" aria-hidden="true">
+            <div class="phone-mark">2×</div>
+            <span class="distance-line">1.5–2 m</span>
+            <div class="subject-mark"><i></i></div>
+          </div>
+          <ul class="rule-lines">
+            <li><b>镜头</b><span>优先后置 2×；没有 2× 就用后置 1×，人站远再裁切</span></li>
+            <li><b>高度</b><span>镜头与眼睛同高或高 2–5 cm，不从胸口往上拍</span></li>
+            <li><b>角度</b><span>身体转 15°，脸回镜头；下巴先向前，再轻压</span></li>
+            <li><b>光线</b><span>面向窗户 45°；关掉正上方直射顶灯</span></li>
+            <li><b>表情</b><span>拍前呼气，眼神看镜头，不用力抿嘴</span></li>
+          </ul>
+        </section>
+
+        <section class="grooming-plan">
+          <div class="section-heading">
+            <div><p class="eyebrow">GROOMING</p><h2>固定维护，不靠临场补救</h2></div>
+          </div>
+          <div class="routine-tabs" role="tablist" aria-label="护理频率">
+            <button class="active" data-routine="daily">每天</button>
+            <button data-routine="weekly">每周</button>
+            <button data-routine="monthly">每月</button>
+          </div>
+          <div id="routine-content" class="routine-content"></div>
+        </section>
+
+        <details class="haircut-script">
+          <summary>给理发师看的原话 <span>展开</span></summary>
+          <p>“顶部不要再做高，保留约 6:4 的自然侧分和一点纹理；两侧、耳上和后脑收干净，但不要推成贴头皮的高渐变；刘海不要厚重盖住额头，也不要吹成很高的油头。我要稳、利落、适合戴眼镜和拍企业口播。”</p>
+        </details>
+      </section>
+
+      <section class="page" id="page-style" aria-labelledby="nav-style">
+        <div class="page-title">
+          <p class="eyebrow">WARDROBE SYSTEM</p>
+          <h2>不学潮流，<br>先建立制服。</h2>
+        </div>
+
+        <section class="style-direction">
+          <p class="eyebrow">YOUR SILHOUETTE</p>
+          <h3>利落直线 · 有肩线 · 少装饰</h3>
+          <p>你高、瘦、腿长，上衣一旦又宽又长，身体会像挂在衣服里，头部反而更突出。方向不是紧身，而是“合肩、略宽、长度克制”。</p>
+          <div class="palette" aria-label="推荐色板">
+            <span style="--swatch:#171816">炭黑</span>
+            <span style="--swatch:#41443f">深灰</span>
+            <span style="--swatch:#ddd7ca">米白</span>
+            <span style="--swatch:#273142">藏青</span>
+            <span style="--swatch:#59614b">军绿</span>
+          </div>
+        </section>
+
+        <section class="uniforms">
+          <div class="section-heading">
+            <div><p class="eyebrow">3 UNIFORMS</p><h2>照着穿，不再乱买</h2></div>
+          </div>
+          <article class="uniform-row">
+            <span>01</span>
+            <div><b>工厂口播</b><p>炭灰重磅短袖 / 针织 Polo ＋ 深灰直筒长裤 ＋ 干净的米白鞋</p><small>比全黑更有层次，也不会像普通工作服。</small></div>
+          </article>
+          <article class="uniform-row">
+            <span>02</span>
+            <div><b>见客户</b><p>藏青工装衬衫或薄夹克 ＋ 米白内搭 ＋ 深灰直筒裤</p><small>外层负责建立肩线，内搭只做干净底色。</small></div>
+          </article>
+          <article class="uniform-row">
+            <span>03</span>
+            <div><b>日常出镜</b><p>米白短袖 ＋ 军绿直筒裤 ＋ 深色腰带 / 手表</p><small>保留你已有配色，但把束脚工装裤换成完整直线裤型。</small></div>
+          </article>
+        </section>
+
+        <section class="buy-gate">
+          <div class="section-heading">
+            <div><p class="eyebrow">BUY / NO BUY</p><h2>试衣间购买闸门</h2></div>
+            <span id="buy-score">0 / 5</span>
+          </div>
+          <p class="section-intro">五项全过才买。任何一项不过，都不是“以后会搭”，而是直接放回去。</p>
+          <label class="gate-row"><input type="checkbox" data-buy="shoulder"><span><b>肩线不明显下坠</b><small>自然站立时，接缝在肩峰附近</small></span></label>
+          <label class="gate-row"><input type="checkbox" data-buy="length"><span><b>上衣不盖住大半个臀部</b><small>抬手、坐下都不堆成长褶</small></span></label>
+          <label class="gate-row"><input type="checkbox" data-buy="chest"><span><b>胸腹有余量但不空荡</b><small>侧面看不是一块垂下来的布</small></span></label>
+          <label class="gate-row"><input type="checkbox" data-buy="pants"><span><b>裤腿从大腿到鞋面保持直线</b><small>不紧贴小腿，不在脚踝突然收口</small></span></label>
+          <label class="gate-row"><input type="checkbox" data-buy="match"><span><b>能和现有至少三件衣服搭配</b><small>只能配一套的单品不买</small></span></label>
+        </section>
+
+        <section class="capsule">
+          <div class="section-heading">
+            <div><p class="eyebrow">FIRST 6 PIECES</p><h2>只补这六件</h2></div>
+          </div>
+          <ol>
+            <li><span>01</span><p><b>炭灰重磅短袖</b><small>合肩、圆领、无大图案</small></p></li>
+            <li><span>02</span><p><b>米白重磅短袖</b><small>不透、不软塌、领口贴合</small></p></li>
+            <li><span>03</span><p><b>深灰针织 Polo</b><small>企业 IP 出镜优先</small></p></li>
+            <li><span>04</span><p><b>藏青工装衬衫 / 薄夹克</b><small>给肩部建立轮廓</small></p></li>
+            <li><span>05</span><p><b>深灰直筒西裤</b><small>中腰、裤脚轻触鞋面</small></p></li>
+            <li><span>06</span><p><b>深色直筒休闲裤</b><small>替换束脚和过多口袋</small></p></li>
+          </ol>
+          <p class="stop-list"><b>暂停购买：</b>落肩 Oversize、长款 T 恤、紧身小脚裤、束脚工装裤、亮色大 Logo、薄软贴身面料。</p>
+        </section>
+      </section>
+
+      <section class="page" id="page-workout" aria-labelledby="nav-workout">
+        <div class="page-title compact workout-title">
+          <p class="eyebrow">DAILY TRAINING</p>
+          <h2 id="workout-heading">今天练肩背与胸。</h2>
+          <p id="workout-reason">先让身体框架追上身高，不安排减脂型训练。</p>
+        </div>
+
+        <section class="workout-console">
+          <div class="workout-meta">
+            <span id="workout-day-name">星期三</span>
+            <strong id="workout-focus">上肢 A</strong>
+            <small id="workout-level">中等强度 · 留 2 次余力</small>
+          </div>
+          <div class="duration-tabs" role="tablist" aria-label="训练时长">
+            <button data-duration="30">30 分钟</button>
+            <button class="active" data-duration="45">45 分钟</button>
+            <button data-duration="60">60 分钟</button>
+          </div>
+          <div class="timer-line">
+            <div>
+              <span>剩余时间</span>
+              <strong id="workout-timer">45:00</strong>
+            </div>
+            <div class="timer-actions">
+              <button id="timer-toggle" type="button">开始</button>
+              <button id="timer-reset" type="button">重置</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="exercise-block">
+          <div class="section-heading">
+            <div><p class="eyebrow">TODAY'S SET</p><h2>按顺序完成</h2></div>
+            <span id="exercise-count">0 / 5</span>
+          </div>
+          <p class="section-intro">默认器材：双肩包装书；有哑铃或弹力带时直接替换。动作结束时应还能再做约 2 次。</p>
+          <div class="exercise-list" id="exercise-list"></div>
+          <button class="primary-button finish-workout" id="finish-workout" type="button">完成今日训练</button>
+        </section>
+
+        <section class="week-rhythm">
+          <div class="section-heading">
+            <div><p class="eyebrow">WEEKLY RHYTHM</p><h2>一周不连续硬练</h2></div>
+          </div>
+          <div class="week-strip" id="week-strip"></div>
+          <p class="section-intro">周三和周日是主动恢复，不是偷懒。你现在最需要的是持续增肌和恢复，不是每天把热量消耗掉。</p>
+        </section>
+
+        <section class="body-target">
+          <p class="eyebrow">WHY THIS PLAN</p>
+          <h3>你的优先顺序</h3>
+          <ol>
+            <li><span>01</span><p><b>肩与上背</b><small>扩大视觉框架，改善头身平衡和衣服支撑。</small></p></li>
+            <li><span>02</span><p><b>上胸与站姿</b><small>让口播正面更挺拔，不用刻意挺胸。</small></p></li>
+            <li><span>03</span><p><b>腿臀基础</b><small>保持上下身协调，不追求大重量和力竭。</small></p></li>
+          </ol>
+          <p class="training-warning">出现尖锐疼痛、胸闷或眩晕就停止。普通酸胀可以观察，关节疼痛不要硬扛。</p>
+        </section>
+      </section>
+
+      <section class="page" id="page-progress" aria-labelledby="nav-progress">
+        <div class="page-title compact">
+          <p class="eyebrow">PROGRESS</p>
+          <h2>只比较同条件记录。</h2>
+        </div>
+
+        <div class="score-overview">
+          <div><span>面部状态</span><strong id="face-score">—</strong><small>/ 5</small></div>
+          <div><span>穿搭完成度</span><strong id="style-score">—</strong><small>/ 5</small></div>
+          <div><span>力量训练</span><strong id="training-score">—</strong><small>次</small></div>
+        </div>
+
+        <section class="compare-block">
+          <div class="record-list-head">
+            <h3>照片对比</h3>
+            <span>同镜头 · 同光线</span>
+          </div>
+          <div class="compare-selects">
+            <label>较早记录<select id="compare-a"></select></label>
+            <label>较新记录<select id="compare-b"></select></label>
+          </div>
+          <div class="photo-tabs" role="tablist" aria-label="照片角度">
+            <button class="active" data-photo="front">面部</button>
+            <button data-photo="full">全身</button>
+            <button data-photo="side">侧面</button>
+          </div>
+          <div class="compare-stage">
+            <figure>
+              <div class="photo-slot" id="photo-a"><span>暂无照片</span></div>
+              <figcaption id="caption-a">—</figcaption>
+            </figure>
+            <figure>
+              <div class="photo-slot" id="photo-b"><span>暂无照片</span></div>
+              <figcaption id="caption-b">—</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="trend-block">
+          <div class="record-list-head">
+            <h3>体重趋势</h3>
+            <span id="chart-change">—</span>
+          </div>
+          <canvas id="weight-chart" height="190" aria-label="体重变化折线图"></canvas>
+        </section>
+
+        <div class="record-list-head">
+          <h3>周记录</h3>
+          <span id="record-count">0 条</span>
+        </div>
+        <div class="record-list" id="record-list"></div>
+      </section>
+
+      <section class="page" id="page-profile" aria-labelledby="nav-profile">
+        <div class="page-title compact">
+          <p class="eyebrow">PRIVATE PROFILE</p>
+          <h2>阿靖的固定数据</h2>
+        </div>
+        <form id="profile-form" class="profile-form">
+          <div class="field-grid">
+            <label>身高（cm）<input name="height" type="number" step="0.1" inputmode="decimal"></label>
+            <label>年龄<input name="age" type="number" step="1" inputmode="numeric"></label>
+            <label>基线体重（kg）<input name="baselineWeight" type="number" step="0.1" inputmode="decimal"></label>
+            <label>第一阶段目标（kg）<input name="targetWeight" type="number" step="0.1" inputmode="decimal"></label>
+            <label>肩宽·弧线（cm）<input name="shoulderArc" type="number" step="0.1" inputmode="decimal"></label>
+            <label>下档长（cm）<input name="lowerLength" type="number" step="0.1" inputmode="decimal"></label>
+            <label>上身长（cm）<input name="torsoLength" type="number" step="0.1" inputmode="decimal"></label>
+            <label>头高（cm）<input name="headHeight" type="number" step="0.1" inputmode="decimal"></label>
+          </div>
+          <label>当前主方向<textarea name="direction" rows="3"></textarea></label>
+          <button class="primary-button" type="submit">保存个人档案</button>
+        </form>
+
+        <section class="privacy-tools">
+          <div>
+            <p class="eyebrow">LOCAL DATA</p>
+            <h3>照片和记录只在当前设备</h3>
+            <p>换手机或清理浏览器前先导出备份。本工具不做人脸识别，也不会自动上传照片。</p>
+          </div>
+          <div class="tool-actions">
+            <button id="restart-plan" type="button">重新开始 30 天</button>
+            <button id="export-data" type="button">导出备份</button>
+            <label class="file-button">导入备份<input id="import-data" type="file" accept="application/json"></label>
+            <button id="clear-data" class="danger" type="button">清空全部数据</button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <button class="fab" id="fab-add" aria-label="新增记录">＋</button>
+
+    <nav class="bottom-nav" aria-label="主导航">
+      <button class="active" id="nav-home" data-page="home"><span>今</span>今日</button>
+      <button id="nav-face" data-page="face"><span>面</span>面部</button>
+      <button id="nav-style" data-page="style"><span>衣</span>穿搭</button>
+      <button id="nav-workout" data-page="workout"><span>练</span>训练</button>
+      <button id="nav-progress" data-page="progress"><span>↗</span>进度</button>
+      <button id="nav-profile" data-page="profile"><span>靖</span>档案</button>
+    </nav>
+  </div>
+
+  <dialog id="checkin-dialog">
+    <form id="checkin-form">
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <header class="sheet-header">
+        <div><p class="eyebrow">WEEKLY CHECK-IN</p><h2>本周记录</h2></div>
+        <button type="button" class="close-button" id="close-checkin" aria-label="关闭">×</button>
+      </header>
+      <div class="sheet-scroll">
+        <div class="field-grid">
+          <label>日期<input name="date" type="date" required></label>
+          <label>体重（kg）<input name="weight" type="number" step="0.1" inputmode="decimal" required></label>
+          <label>面部状态（1–5）<input name="faceScore" type="number" min="1" max="5" step="1" inputmode="numeric"></label>
+          <label>穿搭完成度（1–5）<input name="styleScore" type="number" min="1" max="5" step="1" inputmode="numeric"></label>
+          <label>力量训练（次）<input name="training" type="number" step="1" inputmode="numeric"></label>
+          <label>平均睡眠（小时）<input name="sleep" type="number" step="0.1" inputmode="decimal"></label>
+          <label>腰围（cm）<input name="waist" type="number" step="0.1" inputmode="decimal"></label>
+          <label>胸围（cm）<input name="chest" type="number" step="0.1" inputmode="decimal"></label>
+        </div>
+        <fieldset class="checkin-factors">
+          <legend>这周实际做到什么</legend>
+          <label><input name="hairDone" type="checkbox"><span>发型整洁、顶部没有堆高</span></label>
+          <label><input name="groomingDone" type="checkbox"><span>基础清洁、防晒、唇部和胡须处理稳定</span></label>
+          <label><input name="cameraDone" type="checkbox"><span>按后置 2× 标准机位拍摄</span></label>
+          <label><input name="outfitDone" type="checkbox"><span>至少完成一套合肩直线穿搭</span></label>
+        </fieldset>
+        <label>本周备注<textarea name="notes" rows="3" placeholder="只写变量，例如：换了镜框、上衣缩短、机位升高"></textarea></label>
+        <div class="photo-upload-group">
+          <p>标准照片 <span>照片不会上传</span></p>
+          <label>面部基准照<input name="photoFront" type="file" accept="image/*" capture="environment"></label>
+          <label>全身穿搭照<input name="photoFull" type="file" accept="image/*" capture="environment"></label>
+          <label>侧面体态照<input name="photoSide" type="file" accept="image/*" capture="environment"></label>
+        </div>
+      </div>
+      <button class="primary-button sheet-save" type="submit">保存本周记录</button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js?v=8"></script>
+</body>
+</html>

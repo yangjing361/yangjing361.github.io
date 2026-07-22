@@ -1,0 +1,12 @@
+{
+  "appId": "com.ajing.imageplan",
+  "appName": "阿靖形象计划",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#f2efe7",
+    "allowMixedContent": false
+  }
+}

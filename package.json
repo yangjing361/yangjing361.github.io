@@ -1,0 +1,20 @@
+{
+  "name": "jing-image-plan",
+  "version": "1.0.1",
+  "private": true,
+  "description": "阿靖形象计划的独立 Android 应用",
+  "scripts": {
+    "cap:add:android": "cap add android",
+    "cap:sync": "cap sync android",
+    "cap:copy": "cap copy android"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.4.2",
+    "@capacitor/core": "8.4.2",
+    "@capacitor/filesystem": "8.1.2",
+    "@capacitor/share": "8.0.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.4.2"
+  }
+}
