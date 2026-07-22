@@ -6,6 +6,11 @@
 
 <https://yangjing361.github.io/>
 
+## Android APK
+
+- 最新版本：<https://github.com/yangjing361/yangjing361.github.io/releases/latest>
+- v1.0.0 直接下载：<https://github.com/yangjing361/yangjing361.github.io/releases/download/v1.0.0/ajing-image-plan-v1.0.0.apk>
+
 ## 本地启动
 
 在 Windows PowerShell 中运行：
